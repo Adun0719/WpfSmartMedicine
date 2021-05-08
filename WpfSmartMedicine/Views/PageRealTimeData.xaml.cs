@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfSmartMedicine.View
+namespace WpfSmartMedicine.Views
 {
     /// <summary>
-    /// PageDataGrid.xaml 的交互逻辑
+    /// PageRealTimeData.xaml 的交互逻辑
     /// </summary>
-    public partial class PageDataGrid : Page
+    public partial class PageRealTimeData : Page
     {
-        public PageDataGrid()
+        public PageRealTimeData()
         {
             InitializeComponent();
         }

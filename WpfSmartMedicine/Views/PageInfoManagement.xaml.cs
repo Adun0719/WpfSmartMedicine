@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfSmartMedicine.View
+namespace WpfSmartMedicine.Views
 {
     /// <summary>
-    /// PageRealTimeData.xaml 的交互逻辑
+    /// PageInfoManagement.xaml 的交互逻辑
     /// </summary>
-    public partial class PageRealTimeData : Page
+    public partial class PageInfoManagement : Page
     {
-        public PageRealTimeData()
+        public PageInfoManagement()
         {
             InitializeComponent();
         }

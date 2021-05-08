@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 
-namespace WpfSmartMedicine.Model
+namespace WpfSmartMedicine.Models
 {
     public class ModelMainWindow : INotifyPropertyChanged
     {

@@ -39,6 +39,7 @@
                     <Border VerticalAlignment="Top" Height="1" Background="White"/>
                     <RadioButton Style="{StaticResource DefaultRadioStyle}" Content="实时数据" Name="RbRealTimeData" Height="80" FontSize="20" Checked="RbRealTimeData_Checked"/>
                     <RadioButton Style="{StaticResource DefaultRadioStyle}" Content="数据查询" Name="RbDataGrid" Height="80" FontSize="20" Checked="RbDataGrid_Checked"/>
+                    <RadioButton Style="{StaticResource DefaultRadioStyle}" Content="信息管理" Name="RbInfoManagement" Height="80" FontSize="20" Checked="RbInfoManagement_Checked"/>
                 </StackPanel>
                 <Border Width="1" HorizontalAlignment="Right" Background="#FFC8C8C8"/>
             </Grid>

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using WpfSmartMedicine.View;
+using WpfSmartMedicine.Views;
 
 namespace WpfSmartMedicine
 {
@@ -62,6 +62,11 @@ namespace WpfSmartMedicine
             Setting set = new Setting();
             set.Show();
             this.Close();
+        }
+
+        private void RbInfoManagement_Checked(object sender, RoutedEventArgs e)
+        {
+            FrameMainWindow.Content = new PageInfoManagement();
         }
     }
 }

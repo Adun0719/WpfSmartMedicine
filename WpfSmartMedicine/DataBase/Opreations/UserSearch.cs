@@ -9,7 +9,7 @@ namespace WpfSmartMedicine.DataBase.Opreations
 {
     public class UserSearch
     {
-        DataContext context = new DataContext();
+        readonly DataContext context = new DataContext();
         public string UserName { get; set; }
 
         public List<User> Search()

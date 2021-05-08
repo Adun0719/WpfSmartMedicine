@@ -4,6 +4,8 @@ using System.Text;
 using WpfSmartMedicine.Commands;
 using WpfSmartMedicine.Models;
 using WpfSmartMedicine.DataBase.Opreations;
+using WpfSmartMedicine.DataBase.Models;
+using System.Linq;
 
 namespace WpfSmartMedicine.ViewModels
 {

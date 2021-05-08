@@ -9,7 +9,7 @@ namespace WpfSmartMedicine.DataBase.Opreations
 {
     public class RoomSearch
     {
-        DataContext context = new DataContext();
+        readonly DataContext context = new DataContext();
         public string RoomID { get; set; }       
 
         public List<Room> Search()

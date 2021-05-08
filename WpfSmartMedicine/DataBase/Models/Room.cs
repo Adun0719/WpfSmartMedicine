@@ -7,14 +7,8 @@ namespace WpfSmartMedicine.DataBase.Models
 {
     public class Room
     {
+        [Required,Key,MaxLength(10)]
         public string ID { get; set; }
 
-        public List<User> UserInfos { get; set; }
-
-        public Room()
-        {
-            UserInfos = new List<User>();
-
-        }
     }
 }

@@ -20,8 +20,8 @@
         <Grid Grid.Row="0">
             <StackPanel Height="30" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0">
                 <Label Content="用户名：" VerticalContentAlignment="Center"/>
-                <TextBox Name="TbUserName" Width="120" Height="20"/>
-                <Button Style="{StaticResource DefaultButton}" Name="BtnNameSearch" Width="60" Margin="20 0 0 0" Cursor="Hand" >
+                <TextBox Name="TbUserName" Text="{Binding Model.UserName}" Width="120" Height="20"/>
+                <Button Command="{Binding UserCommand}" Style="{StaticResource DefaultButton}" Name="BtnNameSearch" Width="60" Margin="20 0 0 0" Cursor="Hand" >
                     <Button.Content>
                         <Border CornerRadius="2" Background="#FF00518F" Height="30" Width="60">
                             <TextBlock Text="查询" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
@@ -31,20 +31,26 @@
             </StackPanel>
         </Grid>
 
+        <Grid Grid.Row="1">
+            <DataGrid Name="DgUser" ItemsSource="{Binding Model.UserTable}" Margin="20"/>
+        </Grid>
+
         <Grid Grid.Row="2">
-            <Grid Grid.Row="0">
-                <StackPanel Height="30" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0">
-                    <Label Content="房间号：" VerticalContentAlignment="Center"/>
-                    <TextBox Name="TbRoomID" Width="120" Height="20"/>
-                    <Button Style="{StaticResource DefaultButton}" Name="BtnRoomSearch" Width="60" Margin="20 0 0 0" Cursor="Hand" >
-                        <Button.Content>
-                            <Border CornerRadius="2" Background="#FF00518F" Height="30" Width="60">
-                                <TextBlock Text="查询" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-                            </Border>
-                        </Button.Content>
-                    </Button>
-                </StackPanel>
-            </Grid>
+            <StackPanel Height="30" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0">
+                <Label Content="房间号：" VerticalContentAlignment="Center"/>
+                <TextBox Name="TbRoomID" Text="{Binding Model.RoomId}" Width="120" Height="20"/>
+                <Button Command="{Binding RoomCommand}" Style="{StaticResource DefaultButton}" Name="BtnRoomSearch" Width="60" Margin="20 0 0 0" Cursor="Hand" >
+                    <Button.Content>
+                        <Border CornerRadius="2" Background="#FF00518F" Height="30" Width="60">
+                            <TextBlock Text="查询" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                        </Border>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </Grid>
+        
+        <Grid Grid.Row="3">
+            <DataGrid Name="DgRoom" ItemsSource="{Binding Model.RoomTable}" Margin="20"/>
         </Grid>
     </Grid>
 </Page>

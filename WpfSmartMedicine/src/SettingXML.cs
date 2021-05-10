@@ -34,6 +34,7 @@ namespace WpfSmartMedicine.src
 
         public string XmlRead(string str) 
         {
+            //待补充
             XmlReaderSettings.ConformanceLevel = ConformanceLevel.Auto;
             xmlReader = XmlReader.Create("conf.xml", XmlReaderSettings);
             var result = xmlReader[str];

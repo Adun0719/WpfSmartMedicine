@@ -61,6 +61,7 @@ namespace WpfSmartMedicine
         {
             Setting set = new Setting();
             set.Show();
+            
             this.Close();
         }
 

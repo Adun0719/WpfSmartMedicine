@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.IO;
 using WpfSmartMedicine.src;
+using WpfSmartMedicine.ViewModels;
 
 namespace WpfSmartMedicine
 {
@@ -21,23 +22,19 @@ namespace WpfSmartMedicine
         public Setting()
         {
             InitializeComponent();
+            DataContext = new ViewModelSetting();
+
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             MainWindow mw = new MainWindow();
             mw.Show();
-
         }
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
         {
-            SettingXML settingXML = new SettingXML();
-            settingXML.XmlLoad();
-            settingXML.path = $"{Directory.GetCurrentDirectory()}/conf.xml";
-            settingXML.PortName = CmbPortNames.Text;
-            settingXML.DataGridConnectString = TbDataGridUri.Text;
-            settingXML.XmlSave();
+
         }
     }
 }

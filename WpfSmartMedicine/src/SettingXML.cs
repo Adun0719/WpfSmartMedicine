@@ -9,24 +9,36 @@ namespace WpfSmartMedicine.src
     {
         public string path;
 
-        private XmlDocument Xml = new XmlDocument();
+        private XmlWriterSettings XmlWriterSettings = new XmlWriterSettings();
+
+        private XmlReaderSettings XmlReaderSettings = new XmlReaderSettings();
+
+        private XmlWriter xmlWriter;
+
+        private XmlReader xmlReader;
 
         public string PortName { get; set; }
 
-        public string DataGridConnectString { get; set; }
-
-        public void XmlLoad()
-        {
-            var time = Xml.CreateElement("Time",$"{DateTime.Now}");
-            Xml.AppendChild(time);
-        }
+        public string SqlConnectString { get; set; }
 
         public void XmlSave()
         {
-            var port = Xml.CreateElement("PortName",PortName);
-            var dataGridConnectString = Xml.CreateElement("DataGridConnectString", DataGridConnectString);
-            Xml.AppendChild(dataGridConnectString);
-            Xml.Save(path);
+            XmlWriterSettings.ConformanceLevel = ConformanceLevel.Auto;
+            xmlWriter = XmlWriter.Create("conf.xml",XmlWriterSettings);
+            xmlWriter.WriteStartElement("CreateTime",DateTime.Now.ToString());
+            xmlWriter.WriteAttributeString("PortName",PortName);
+            xmlWriter.WriteAttributeString("SqlConnectString", SqlConnectString);
+            xmlWriter.WriteEndElement();
+            xmlWriter.Close();
+        }
+
+        public string XmlRead(string str) 
+        {
+            XmlReaderSettings.ConformanceLevel = ConformanceLevel.Auto;
+            xmlReader = XmlReader.Create("conf.xml", XmlReaderSettings);
+            var result = xmlReader[str];
+            xmlReader.Close();
+            return result;
         }
     }
 }

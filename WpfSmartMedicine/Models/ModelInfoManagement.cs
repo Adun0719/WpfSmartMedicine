@@ -10,30 +10,30 @@ namespace WpfSmartMedicine.Models
 {
     public class ModelInfoManagement : INotifyPropertyChanged
     {
-        private List<User> userTable;
+        private List<User> _UserTable;
         public List<User> UserTable
         {
             get 
             {
-                return userTable;
+                return _UserTable;
             }
             set 
             {
-                userTable = value;
+                _UserTable = value;
                 NotifyPropertyChanged("UserTable");
             }
         }
 
-        private List<Room> roomTable;
+        private List<Room> _RoomTable;
         public List<Room> RoomTable
         {
             get
             {
-                return roomTable;
+                return _RoomTable;
             }
             set
             {
-                roomTable = value;
+                _RoomTable = value;
                 NotifyPropertyChanged("RoomTable");
             }
         }

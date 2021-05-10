@@ -3,15 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfSmartMedicine"
+        xmlns:local="clr-namespace:WpfSmartMedicine" xmlns:models="clr-namespace:WpfSmartMedicine.ViewModels" d:DataContext="{d:DesignInstance Type=models:ViewModelSetting}"
         mc:Ignorable="d"
         Title="设置" Height="224" Width="460" ResizeMode="CanMinimize" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="串口：" HorizontalAlignment="Left" Margin="44,21,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CmbPortNames" HorizontalAlignment="Left" Margin="167,23,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="CmbPortNames" ItemsSource="{Binding Model.PortNames}" SelectedItem="{Binding Model.PortName}" HorizontalAlignment="Left" Margin="167,23,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="数据库连接字符串：" HorizontalAlignment="Left" Margin="44,51,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TbDataGridUri" HorizontalAlignment="Left" Margin="167,51,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Height="74"/>
-        <Button Style="{StaticResource DefaultButton}" x:Name="BtnSet" HorizontalAlignment="Left" Margin="180,140,0,0" Height="30" Width="60" VerticalAlignment="Top" Cursor="Hand" Click="BtnSet_Click">
+        <TextBox x:Name="TbDataGridUri" Text="{Binding Model.SqlConnectString}" HorizontalAlignment="Left" Margin="167,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Height="74"/>
+        <Button Style="{StaticResource DefaultButton}" x:Name="BtnSet" Command="{Binding SaveCommand}" HorizontalAlignment="Left" Margin="180,140,0,0" Height="30" Width="60" VerticalAlignment="Top" Cursor="Hand" Click="BtnSet_Click">
             <Button.Content>
                 <Border CornerRadius="2" Background="#FF00518F" Height="30" Width="60">
                     <TextBlock Text="保存" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>

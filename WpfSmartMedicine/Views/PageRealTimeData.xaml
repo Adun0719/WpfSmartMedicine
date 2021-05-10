@@ -31,19 +31,19 @@
 
         <Grid Grid.Row="1">
             <UniformGrid Columns="1" Rows="5" Width="300" HorizontalAlignment="Left" Margin="20 0 0 0">
-                <TextBlock Name="RoomData1"/>
-                <TextBlock Name="RoomData3"/>
-                <TextBlock Name="RoomData5"/>
-                <TextBlock Name="RoomData7"/>
-                <TextBlock Name="RoomData9"/>
+                <Frame Name="RoomData1"/>
+                <Frame Name="RoomData3"/>
+                <Frame Name="RoomData5"/>
+                <Frame Name="RoomData7"/>
+                <Frame Name="RoomData9"/>
             </UniformGrid>
 
             <UniformGrid Columns="1" Rows="5" Width="300" HorizontalAlignment="Right" Margin="0 0 20 0">
-                <TextBlock Name="RoomData2"/>
-                <TextBlock Name="RoomData4"/>
-                <TextBlock Name="RoomData6"/>
-                <TextBlock Name="RoomData8"/>
-                <TextBlock Name="RoomData10"/>
+                <Frame Name="RoomData2"/>
+                <Frame Name="RoomData4"/>
+                <Frame Name="RoomData6"/>
+                <Frame Name="RoomData8"/>
+                <Frame Name="RoomData10"/>
             </UniformGrid>
         </Grid>
 

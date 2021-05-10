@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
+using System.Xml.Linq;
+using System.IO;
 
 namespace WpfSmartMedicine.src
 {
@@ -15,7 +17,7 @@ namespace WpfSmartMedicine.src
 
         private XmlWriter xmlWriter;
 
-        private XmlReader xmlReader;
+        private XElement xElement;
 
         public string PortName { get; set; }
 
@@ -25,9 +27,11 @@ namespace WpfSmartMedicine.src
         {
             XmlWriterSettings.ConformanceLevel = ConformanceLevel.Auto;
             xmlWriter = XmlWriter.Create("conf.xml",XmlWriterSettings);
-            xmlWriter.WriteStartElement("CreateTime",DateTime.Now.ToString());
-            xmlWriter.WriteAttributeString("PortName",PortName);
-            xmlWriter.WriteAttributeString("SqlConnectString", SqlConnectString);
+            xmlWriter.WriteStartElement("Config");
+            xmlWriter.WriteElementString("CreateTime", DateTime.Now.ToString());
+            xmlWriter.WriteElementString("PortName", PortName);
+            xmlWriter.WriteElementString("SqlConnectString",
+                SqlConnectString);
             xmlWriter.WriteEndElement();
             xmlWriter.Close();
         }
@@ -35,11 +39,18 @@ namespace WpfSmartMedicine.src
         public string XmlRead(string str) 
         {
             //待补充
-            XmlReaderSettings.ConformanceLevel = ConformanceLevel.Auto;
-            xmlReader = XmlReader.Create("conf.xml", XmlReaderSettings);
-            var result = xmlReader[str];
-            xmlReader.Close();
+            xElement = XElement.Load("conf.xml");
+            string result = xElement.Element(str).Value.Trim();
             return result;
+        }
+
+        public void XmlCreate()
+        {
+            if (File.Exists("conf.xml"))
+            {
+                return;
+            }
+            XmlSave();
         }
     }
 }

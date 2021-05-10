@@ -7,7 +7,7 @@ namespace WpfSmartMedicine.Models
 {
     public class ModelMainWindow : INotifyPropertyChanged
     {
-        public DateTime _LocalTime;
+        private DateTime _LocalTime;
 
         public DateTime LocalTime 
         { 
@@ -17,12 +17,18 @@ namespace WpfSmartMedicine.Models
             } 
             set 
             {
-                _LocalTime = value; 
+                _LocalTime = value;
+                NotifyPropertyChanged("LocalTime");
             } 
         }
         public bool NetConnectStatus { get; set; }
         public bool ComConnectStatus { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

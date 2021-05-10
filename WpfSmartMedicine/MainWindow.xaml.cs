@@ -33,6 +33,7 @@ namespace WpfSmartMedicine
             Timer_Loaded();
             FrameMainWindow.Content = new PageRealTimeData();
             RbRealTimeData.IsChecked = true;
+
         }
 
         public void Timer_Loaded()

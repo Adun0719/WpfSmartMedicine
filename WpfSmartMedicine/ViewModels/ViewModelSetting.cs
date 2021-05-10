@@ -42,7 +42,7 @@ namespace WpfSmartMedicine.ViewModels
             };
             Model.PortNames = SerialPort.GetPortNames().ToList();
             SettingXML xML = new SettingXML();
-            Model.PortName = xML.XmlRead("PortName");
+            xML.XmlCreate();
             Model.SqlConnectString = xML.XmlRead("SqlConnectString");
         }
 

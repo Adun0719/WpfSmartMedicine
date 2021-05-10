@@ -11,9 +11,7 @@ namespace WpfSmartMedicine.src
     {
         public string path;
 
-        private XmlWriterSettings XmlWriterSettings = new XmlWriterSettings();
-
-        private XmlReaderSettings XmlReaderSettings = new XmlReaderSettings();
+        private readonly XmlWriterSettings XmlWriterSettings = new XmlWriterSettings();
 
         private XmlWriter xmlWriter;
 
@@ -38,7 +36,6 @@ namespace WpfSmartMedicine.src
 
         public string XmlRead(string str) 
         {
-            //待补充
             xElement = XElement.Load("conf.xml");
             string result = xElement.Element(str).Value.Trim();
             return result;

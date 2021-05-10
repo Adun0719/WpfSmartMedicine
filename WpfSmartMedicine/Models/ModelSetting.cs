@@ -7,6 +7,7 @@ namespace WpfSmartMedicine.Models
 {
     public class ModelSetting:INotifyPropertyChanged
     {
+        #region 串口下拉框列表和选中数据
         private List<string> _PortNames;
 
         public List<string> PortNames
@@ -36,7 +37,9 @@ namespace WpfSmartMedicine.Models
                 NotifyPropertyChanged("PortName");
             }
         }
+        #endregion
 
+        #region 连接字符串数据
         private string _SqlConnnectString;
 
         public string SqlConnectString 
@@ -51,6 +54,7 @@ namespace WpfSmartMedicine.Models
                 NotifyPropertyChanged("SqlConnectString");
             } 
         }
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
 

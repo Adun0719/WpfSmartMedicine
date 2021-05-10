@@ -16,8 +16,8 @@ namespace WpfSmartMedicine.DataBase.DataContexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>()
-           .HasCheckConstraint("CK_Age", "Age Between 0 AND 150")
-           .HasCheckConstraint("CK_Sex", "sex ='男'or sex='女'");
+           .HasCheckConstraint("CK_Age", "Age Between 0 AND 150")// 约束 年龄从0到150
+           .HasCheckConstraint("CK_Sex", "sex ='男'or sex='女'");// 约束 性别只能为男或女
         }
 
         public DbSet<Room> Room { get; set; }

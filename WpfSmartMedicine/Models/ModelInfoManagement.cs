@@ -10,6 +10,7 @@ namespace WpfSmartMedicine.Models
 {
     public class ModelInfoManagement : INotifyPropertyChanged
     {
+        #region 用户查询结果
         private List<User> _UserTable;
         public List<User> UserTable
         {
@@ -23,7 +24,9 @@ namespace WpfSmartMedicine.Models
                 NotifyPropertyChanged("UserTable");
             }
         }
+        #endregion
 
+        #region 房间查询结果
         private List<Room> _RoomTable;
         public List<Room> RoomTable
         {
@@ -37,6 +40,7 @@ namespace WpfSmartMedicine.Models
                 NotifyPropertyChanged("RoomTable");
             }
         }
+        #endregion
 
         public string RoomId { get; set; }
 

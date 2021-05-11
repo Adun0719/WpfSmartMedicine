@@ -33,6 +33,13 @@ namespace WpfSmartMedicine.src
             xmlWriter.WriteEndElement();
             xmlWriter.Close();
         }
+        /* 示例：
+         * <Config>
+         *      <CreateTime>2021/5/12 星期三 1:51:40</CreateTime>
+         *      <PortName>COM1</PortName>
+         *      <SqlConnectString>Data Source=NEWLAND-PC;Integrated Security=True;Initial Catalog=SmartMedicine</SqlConnectString>
+         * </Config>
+         * */
 
         public string XmlRead(string str) 
         {

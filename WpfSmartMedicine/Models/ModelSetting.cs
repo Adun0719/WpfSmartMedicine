@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using WpfSmartMedicine.src;
+using System.IO.Ports;
+using System.Linq;
 
 namespace WpfSmartMedicine.Models
 {
@@ -61,6 +64,14 @@ namespace WpfSmartMedicine.Models
         public void NotifyPropertyChanged(string propertyName) 
         {
             PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(propertyName));
+        }
+
+        public ModelSetting() 
+        {
+            PortNames = SerialPort.GetPortNames().ToList();
+            SettingXML xML = new SettingXML();
+            xML.XmlCreate();//检测配置文件是否存在，否则生成
+            SqlConnectString = xML.XmlRead("SqlConnectString");
         }
     }
 }

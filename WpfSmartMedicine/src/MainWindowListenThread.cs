@@ -8,6 +8,9 @@ namespace WpfSmartMedicine.src
 {
     public class MainWindowListenThread
     {
+        /*
+         * 主界面状态监听线程
+         */
         public Timer Timer { get; set; }
 
         public int Interval { get; set; }
@@ -16,7 +19,6 @@ namespace WpfSmartMedicine.src
 
         public MainWindowListenThread()
         {
-            Model = new ModelMainWindow();
             Interval = 200;
         }
 

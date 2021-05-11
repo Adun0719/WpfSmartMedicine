@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using WpfSmartMedicine.DataBase.Models;
+using WpfSmartMedicine.src;
 
 namespace WpfSmartMedicine.DataBase.DataContexts
 {
     public class DataContext:DbContext
     {
+        public string ConnectString = new SettingXML().XmlRead("SqlConnectString");
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=NEWLAND-PC;Integrated Security=True;Initial Catalog=SmartMedicine");
+            //optionsBuilder.UseSqlServer("Data Source=NEWLAND-PC;Integrated Security=True;Initial Catalog=SmartMedicine");
+            optionsBuilder.UseSqlServer(ConnectString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

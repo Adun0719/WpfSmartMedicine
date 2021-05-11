@@ -32,15 +32,19 @@ namespace WpfSmartMedicine.ViewModels
 
         private void UserCommandData(object obj)
         {
-            var userSearch = new UserSearch();
-            userSearch.UserName = Model.UserName;
+            var userSearch = new UserSearch
+            {
+                UserName = Model.UserName
+            };
             Model.UserTable = userSearch.Search();
         }
 
         private void RoomCommandData(object obj)
         {
-            var roomSearch = new RoomSearch();
-            roomSearch.RoomID = Model.RoomId;
+            var roomSearch = new RoomSearch
+            {
+                RoomID = Model.RoomId
+            };
             Model.RoomTable = roomSearch.Search();
         }
 

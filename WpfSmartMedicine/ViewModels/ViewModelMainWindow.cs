@@ -13,8 +13,10 @@ namespace WpfSmartMedicine.ViewModels
         public ViewModelMainWindow()
         {
             Model = new ModelMainWindow();
-            var thread = new MainWindowListenThread();
-            thread.Model = Model;
+            var thread = new MainWindowListenThread
+            {
+                Model = Model
+            };
             thread.Start();
         }
 

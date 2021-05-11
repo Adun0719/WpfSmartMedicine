@@ -13,10 +13,6 @@ namespace WpfSmartMedicine.ViewModels
     {
         public DelegateCommand PortNamesCommand { get; set; }
 
-        public DelegateCommand PortNameCommand { get; set; }
-
-        public DelegateCommand SqlConnectStringCommand { get; set; }
-
         public DelegateCommand SaveCommand { get; set; }
 
         public ModelSetting Model { get; set; }
@@ -27,14 +23,6 @@ namespace WpfSmartMedicine.ViewModels
             PortNamesCommand = new DelegateCommand 
             {
                 ExecuteCommand = new Action<object>(PortNamesCommandData)
-            };
-            PortNameCommand = new DelegateCommand
-            {
-                ExecuteCommand = new Action<object>(PortNameCommandData)
-            };
-            SqlConnectStringCommand = new DelegateCommand
-            {
-                ExecuteCommand = new Action<object>(SqlConnectStringCommandData)
             };
             SaveCommand = new DelegateCommand
             {
@@ -50,24 +38,14 @@ namespace WpfSmartMedicine.ViewModels
         {
             Model.PortNames = SerialPort.GetPortNames().ToList();
         }
-
-        private void PortNameCommandData(object obj)
-        {
-            SettingXML xML = new SettingXML();
-            Model.PortName = xML.XmlRead("PortName");
-        }
-
-        private void SqlConnectStringCommandData(object obj)
-        {
-            SettingXML xML = new SettingXML();
-            Model.SqlConnectString = xML.XmlRead("SqlConnectString");
-        }
         
         private void SaveCommandData(object obj)
         {
-            SettingXML xML = new SettingXML();
-            xML.PortName = Model.PortName;
-            xML.SqlConnectString = Model.SqlConnectString;
+            SettingXML xML = new SettingXML
+            {
+                PortName = Model.PortName,
+                SqlConnectString = Model.SqlConnectString
+            };
             xML.XmlSave();
         }
 

@@ -76,5 +76,13 @@
             </Setter>
         </Style>
 
+        <Style x:Key="DefaultDataGridColumnHeader" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#FF00518F"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+       
+        
     </Application.Resources>
 </Application>

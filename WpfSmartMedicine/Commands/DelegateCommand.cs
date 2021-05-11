@@ -25,18 +25,12 @@ namespace WpfSmartMedicine.Commands
 
         public void Execute(object parameter)
         {
-            if (this.ExecuteCommand != null)
-            {
-                this.ExecuteCommand(parameter);
-            }
+            this.ExecuteCommand?.Invoke(parameter);
         }
 
         public void RaiseCanExecuteChanged()
         {
-            if (CanExecuteChanged != null)
-            {
-                CanExecuteChanged(this, EventArgs.Empty);
-            }
+            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

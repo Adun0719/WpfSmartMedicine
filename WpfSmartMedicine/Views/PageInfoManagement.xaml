@@ -32,7 +32,8 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <DataGrid Name="DgUser" ItemsSource="{Binding Model.UserTable}" Margin="20"/>
+            <DataGrid Name="DgUser" ItemsSource="{Binding Model.UserTable}" ColumnHeaderStyle="{StaticResource DefaultDataGridColumnHeader}" Margin="20"
+                      MinColumnWidth="100"/>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -50,7 +51,8 @@
         </Grid>
         
         <Grid Grid.Row="3">
-            <DataGrid Name="DgRoom" ItemsSource="{Binding Model.RoomTable}" Margin="20"/>
+            <DataGrid Name="DgRoom" ItemsSource="{Binding Model.RoomTable}" ColumnHeaderStyle="{StaticResource DefaultDataGridColumnHeader}" Margin="20"
+                      MinColumnWidth="100"/>
         </Grid>
     </Grid>
 </Page>

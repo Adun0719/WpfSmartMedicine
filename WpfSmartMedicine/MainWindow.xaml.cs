@@ -39,7 +39,7 @@ namespace WpfSmartMedicine
 
         private void RbDataGrid_Checked(object sender, RoutedEventArgs e)
         {
-            FrameMainWindow.Content = new PageDataGrid();
+            FrameMainWindow.Content = new PageSensorDataGrid();
         }
 
         private void BtnSettings_Click(object sender, RoutedEventArgs e)

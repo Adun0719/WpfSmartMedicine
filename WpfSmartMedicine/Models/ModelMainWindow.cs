@@ -18,9 +18,40 @@ namespace WpfSmartMedicine.Models
             set 
             {
                 _LocalTime = value;
-                NotifyPropertyChanged("LocalTime");
             } 
         }
+
+        private string _Date;
+
+        public string Date 
+        {
+            get 
+            {
+                return _Date;
+            }
+            set 
+            {
+                _Date = value;
+                NotifyPropertyChanged("Date");
+            }
+        }
+
+        private string _Time;
+
+        public string Time 
+        {
+            get 
+            {
+                return _Time;
+            }
+            set
+            {
+                _Time = value;
+                NotifyPropertyChanged("Time");
+            } 
+        }
+
+
         public bool NetConnectStatus { get; set; }
         public bool ComConnectStatus { get; set; }
 

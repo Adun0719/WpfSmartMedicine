@@ -37,7 +37,7 @@ namespace WpfSmartMedicine.src
         public string XmlRead(string str) 
         {
             xElement = XElement.Load("conf.xml");
-            string result = xElement.Element(str).Value.Trim();
+            string result = xElement?.Element(str).Value.Trim();
             return result;
         }
 

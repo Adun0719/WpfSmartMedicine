@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using WpfSmartMedicine.Views;
+using WpfSmartMedicine.ViewModels;
+using WpfSmartMedicine.src;
 
 namespace WpfSmartMedicine
 {
@@ -22,30 +24,12 @@ namespace WpfSmartMedicine
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly DispatcherTimer timer = new DispatcherTimer();
         public MainWindow()
         {
             InitializeComponent();
-            this.Dispatcher.Invoke(() => 
-            {
-                LbTitleDate.Content = DateTime.Now.ToLongDateString();
-            });
-            Timer_Loaded();
+            DataContext = new ViewModelMainWindow();
             FrameMainWindow.Content = new PageRealTimeData();
             RbRealTimeData.IsChecked = true;
-
-        }
-
-        public void Timer_Loaded()
-        {
-            timer.Interval = TimeSpan.FromSeconds(0.1);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            LbTitleTime.Content = DateTime.Now.ToLongTimeString();
         }
 
         private void RbRealTimeData_Checked(object sender, RoutedEventArgs e)
@@ -62,7 +46,6 @@ namespace WpfSmartMedicine
         {
             Setting set = new Setting();
             set.Show();
-            
             this.Close();
         }
 

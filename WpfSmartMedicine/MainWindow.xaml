@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfSmartMedicine"
+        xmlns:local="clr-namespace:WpfSmartMedicine" xmlns:models="clr-namespace:WpfSmartMedicine.ViewModels" d:DataContext="{d:DesignInstance Type=models:ViewModelMainWindow}"
         mc:Ignorable="d"
         Title="智慧养老" Height="630" Width="1000"  Foreground="White" WindowStartupLocation="CenterScreen" >
     <Grid>
@@ -17,8 +17,8 @@
             <TextBlock Height="50" Width="160" HorizontalAlignment="Left" Text="智慧养老"  FontSize="40" Margin="20 0 0 0"/>
             <StackPanel Height="60"  HorizontalAlignment="Right" Margin="0 0 30 0" Orientation="Horizontal">
                 <StackPanel Width="160">
-                    <Label Name="LbTitleTime" FontSize="20" Height="30" VerticalContentAlignment="Bottom"  Foreground="White"/>
-                    <Label Name="LbTitleDate" FontSize="15" Height="30" VerticalContentAlignment="Top"  Foreground="White" />
+                    <Label Name="LbTitleTime" Content="{Binding Model.Time}" FontSize="20" Height="30" VerticalContentAlignment="Bottom"  Foreground="White"/>
+                    <Label Name="LbTitleDate" Content="{Binding Model.Date}" FontSize="15" Height="30" VerticalContentAlignment="Top"  Foreground="White" />
                 </StackPanel>
                 <Button Style="{StaticResource SettingButton}" Name="BtnSettings" Height="30" Width="30" Margin="10 0 0 0" Foreground="{x:Null}" Cursor="Hand" Click="BtnSettings_Click">
                     <Button.Background>

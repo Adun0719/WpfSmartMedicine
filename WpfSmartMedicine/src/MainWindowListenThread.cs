@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using WpfSmartMedicine.Models;
-using System.Threading;
+using System.Windows.Threading;
 
 namespace WpfSmartMedicine.src
 {
     public class MainWindowListenThread
     {
-        public Timer Timer { get; set; }
+        public DispatcherTimer Timer { get; set; }
 
         public int Interval { get; set; }
 
@@ -22,7 +22,7 @@ namespace WpfSmartMedicine.src
 
         public void Start()
         {
-            Timer = new Timer(p => DateTimeChange(),null,0,Interval);
+            Timer = new DispatcherTimer();
         }
 
         public void DateTimeChange()

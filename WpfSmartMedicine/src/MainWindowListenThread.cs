@@ -16,7 +16,6 @@ namespace WpfSmartMedicine.src
 
         public MainWindowListenThread()
         {
-            Model = new ModelMainWindow();
             Interval = 200;
         }
 

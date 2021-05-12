@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using WpfSmartMedicine.src;
+using WpfSmartMedicine.ViewModels;
 
 namespace WpfSmartMedicine.Models
 {
@@ -60,6 +62,15 @@ namespace WpfSmartMedicine.Models
         public void NotifyPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public ModelMainWindow()
+        {
+            var thread = new MainWindowListenThread
+            {
+                Model = this
+            };
+            thread.Start();
         }
     }
 }

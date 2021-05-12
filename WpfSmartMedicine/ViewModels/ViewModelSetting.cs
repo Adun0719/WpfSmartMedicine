@@ -28,17 +28,20 @@ namespace WpfSmartMedicine.ViewModels
             {
                 ExecuteCommand = new Action<object>(SaveCommandData)
             };
-            Model.PortNames = SerialPort.GetPortNames().ToList();
-            SettingXML xML = new SettingXML();
-            xML.XmlCreate();
-            Model.SqlConnectString = xML.XmlRead("SqlConnectString");
         }
-
+        /// <summary>
+        /// 读取当前串口列表
+        /// </summary>
+        /// <param name="obj"></param>
         private void PortNamesCommandData(object obj)
         {
             Model.PortNames = SerialPort.GetPortNames().ToList();
         }
         
+        /// <summary>
+        /// 保存配置
+        /// </summary>
+        /// <param name="obj"></param>
         private void SaveCommandData(object obj)
         {
             SettingXML xML = new SettingXML

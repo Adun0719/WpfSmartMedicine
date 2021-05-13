@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfSmartMedicine.ViewModels;
 
 namespace WpfSmartMedicine.Views
 {
@@ -21,6 +22,7 @@ namespace WpfSmartMedicine.Views
         public PageSensorDataGrid()
         {
             InitializeComponent();
+            DataContext = new ViewModelSensorDataGrid();
         }
     }
 }

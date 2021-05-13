@@ -13,8 +13,8 @@ namespace WpfSmartMedicine.DataBase.DataContexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Data Source=NEWLAND-PC;Integrated Security=True;Initial Catalog=SmartMedicine");
-            optionsBuilder.UseSqlServer(ConnectString);
+            optionsBuilder.UseSqlServer("Data Source=NEWLAND-PC;Integrated Security=True;Initial Catalog=SmartMedicine");
+            //optionsBuilder.UseSqlServer(ConnectString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

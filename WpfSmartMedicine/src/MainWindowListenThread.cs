@@ -17,14 +17,17 @@ namespace WpfSmartMedicine.src
         public MainWindowListenThread()
         {
             Interval = 200;
+            Timer = new DispatcherTimer();
+            Timer.Tick += DateTimeChange;
+            Timer.Interval = TimeSpan.FromMilliseconds(Interval);
         }
 
         public void Start()
         {
-            Timer = new DispatcherTimer();
+            Timer.Start();
         }
 
-        public void DateTimeChange()
+        private void DateTimeChange(object sender, EventArgs e)
         {
             Model.Date = DateTime.Now.ToLongDateString();
             Model.Time = DateTime.Now.ToLongTimeString();

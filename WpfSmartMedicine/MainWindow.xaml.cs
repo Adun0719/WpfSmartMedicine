@@ -30,6 +30,8 @@ namespace WpfSmartMedicine
             DataContext = new ViewModelMainWindow();
             FrameMainWindow.Content = new PageRealTimeData();
             RbRealTimeData.IsChecked = true;
+            SettingXML xML = new SettingXML();
+            xML.XmlCreate();
         }
 
         private void RbRealTimeData_Checked(object sender, RoutedEventArgs e)

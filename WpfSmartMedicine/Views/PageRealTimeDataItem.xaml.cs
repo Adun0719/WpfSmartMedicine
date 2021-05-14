@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace WpfSmartMedicine.Views
 {
     /// <summary>
-    /// PageInfoManagementItem.xaml 的交互逻辑
+    /// PageRealTimeDataItem.xaml 的交互逻辑
     /// </summary>
-    public partial class PageInfoManagementItem : Page
+    public partial class PageRealTimeDataItem : Page
     {
-        public PageInfoManagementItem()
+        public PageRealTimeDataItem()
         {
             InitializeComponent();
         }

@@ -29,22 +29,8 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1">
-            <UniformGrid Columns="1" Rows="5" Width="300" HorizontalAlignment="Left" Margin="20 0 0 0">
-                <Frame Name="RoomData1"/>
-                <Frame Name="RoomData3"/>
-                <Frame Name="RoomData5"/>
-                <Frame Name="RoomData7"/>
-                <Frame Name="RoomData9"/>
-            </UniformGrid>
-
-            <UniformGrid Columns="1" Rows="5" Width="300" HorizontalAlignment="Right" Margin="0 0 20 0">
-                <Frame Name="RoomData2"/>
-                <Frame Name="RoomData4"/>
-                <Frame Name="RoomData6"/>
-                <Frame Name="RoomData8"/>
-                <Frame Name="RoomData10"/>
-            </UniformGrid>
+        <Grid Grid.Row="1" Name="grid">
+            <UniformGrid Name="uniform"/>
         </Grid>
 
         <Grid Grid.Row="2">

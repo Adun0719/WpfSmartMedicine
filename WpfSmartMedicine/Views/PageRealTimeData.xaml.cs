@@ -11,6 +11,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using WpfSmartMedicine.src;
+
 namespace WpfSmartMedicine.Views
 {
     /// <summary>
@@ -21,6 +23,8 @@ namespace WpfSmartMedicine.Views
         public PageRealTimeData()
         {
             InitializeComponent();
+            uniform = new RealTimeDataHelper();
         }
+
     }
 }

@@ -3,29 +3,32 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Windows.Threading;
+
 using WpfSmartMedicine.Views;
 
 namespace WpfSmartMedicine.src
 {
-    public class RealTimeDataHelper:UniformGrid
+    public class RealTimeDataHelper:Grid
     {
-        private const int ColumnNumber = 4;
-        private const int RowNumber = 4;
-
         public RealTimeDataHelper()
         {
-            Columns = ColumnNumber;
-            Rows = RowNumber;
-            Init();
         }
 
         private void Init()
         {
-            int frameId;
-            for(frameId = 0; frameId < ColumnNumber * RowNumber; frameId++)
+            this.Children.Add(new Frame()
             {
-                this.Children.Add(new Frame() { Content = new PageRealTimeDataItem() });//待完善
-            }
+                Content = new PageRealTimeDataItem(),
+            }) ;
         }
     }
 }

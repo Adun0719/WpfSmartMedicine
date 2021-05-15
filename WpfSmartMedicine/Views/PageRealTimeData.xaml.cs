@@ -23,7 +23,11 @@ namespace WpfSmartMedicine.Views
         public PageRealTimeData()
         {
             InitializeComponent();
-            uniform = new RealTimeDataHelper();
+            var dynamicGrid = new DynamicGrid
+            {
+                ItemNum = 50
+            }.Init();
+            grid.Children.Add(dynamicGrid);
         }
 
     }

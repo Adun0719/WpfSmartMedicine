@@ -30,7 +30,6 @@
         </Grid>
 
         <Grid Grid.Row="1" Name="grid">
-            <UniformGrid Name="uniform"/>
         </Grid>
 
         <Grid Grid.Row="2">

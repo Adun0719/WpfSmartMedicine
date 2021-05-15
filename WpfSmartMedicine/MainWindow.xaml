@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfSmartMedicine" xmlns:models="clr-namespace:WpfSmartMedicine.ViewModels" d:DataContext="{d:DesignInstance Type=models:ViewModelMainWindow}"
         mc:Ignorable="d"
-        Title="智慧养老" Height="630" Width="1000"  Foreground="White" WindowStartupLocation="CenterScreen" >
+        Title="智慧养老" Height="630" Width="1000"  Foreground="White" WindowStartupLocation="CenterScreen" WindowState="Maximized" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>

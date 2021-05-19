@@ -25,7 +25,7 @@ namespace WpfSmartMedicine.Views
             InitializeComponent();
             var dynamicGrid = new DynamicGrid
             {
-                ItemNum = 50
+                ItemNum = 2
             }.Init();
             grid.Children.Add(dynamicGrid);
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
-
+using WpfSmartMedicine.DataBase.Models;
 namespace WpfSmartMedicine.Models
 {
     public class ModelSensorDataGrid : INotifyPropertyChanged
@@ -18,6 +18,37 @@ namespace WpfSmartMedicine.Models
                 NotifyPropertyChanged("SearchModel");
             }
         }
+
+        private string _SensorName;
+
+        public string SensorName 
+        {
+            get 
+            {
+                return _SensorName;
+            }
+            set 
+            {
+                _SensorName = value;
+                NotifyPropertyChanged("SensorName");
+            } 
+        }
+
+        private List<SensorRecord> _SensorRecords;
+
+        public List<SensorRecord> SensorRecords 
+        {
+            get 
+            {
+                return _SensorRecords;
+            }
+            set 
+            {
+                _SensorRecords = value;
+                NotifyPropertyChanged("SensorRecords");
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propertyName)

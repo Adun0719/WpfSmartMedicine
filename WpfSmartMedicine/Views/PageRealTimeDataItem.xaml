@@ -3,22 +3,16 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WpfSmartMedicine.Views"
+      xmlns:local="clr-namespace:WpfSmartMedicine.Views" xmlns:models="clr-namespace:WpfSmartMedicine.Models" d:DataContext="{d:DesignInstance Type=models:ModelRealTimeDataItem}"
       mc:Ignorable="d" 
       d:DesignHeight="150" d:DesignWidth="300"
       Title="PageRealTimeDataItem">
 
     <Grid Background="White">
-        <Label Name="LbRoomID" Content="{Binding Model.RoomID}" Height="20" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,25,0,0"/>
-        <UniformGrid Columns="1" Height="100" Width="200" Margin="50 0 0 0" >
-            <StackPanel Orientation="Horizontal">
-                <Label Content="雷达状态："/>
-                <Label Name="LbSensorData1" Content="{Binding Model.SensorData1}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content=""/>
-                <Label/>
-            </StackPanel>
-        </UniformGrid>
+        <Label Name="LbRoomID" Content="{Binding RoomID}" Height="20" Width="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,40,0,0" FontSize="10"/>
+        <StackPanel Height="100" Width="160" Margin="83,40,57,10">
+            <Label Content="雷达状态："/>
+            <Label Content="{Binding SensorValue}"/>
+        </StackPanel>
     </Grid>
 </Page>

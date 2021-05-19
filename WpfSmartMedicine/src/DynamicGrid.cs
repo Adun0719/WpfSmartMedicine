@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
+using WpfSmartMedicine.Models;
 using WpfSmartMedicine.Views;
 
 namespace WpfSmartMedicine.src
@@ -40,13 +41,38 @@ namespace WpfSmartMedicine.src
 
         public DynamicGrid Init()
         {
-            for(int i = 0; i < ItemNum; i++)
+            //for(int i = 0; i < ItemNum; i++)
+            //{
+            //    this.Children.Add(new Frame()
+            //    {
+            //        Content = new PageRealTimeDataItem()
+            //    });
+            //}
+            var model = new ModelRealTimeDataItem
             {
-                this.Children.Add(new Frame()
+                RoomID = "1001",
+                SensorValue = "正常"
+            };
+            this.Children.Add(new Frame()
+            {
+                Content = new PageRealTimeDataItem() 
+                { 
+                    DataContext = model
+                }
+            });
+            var model1 = new ModelRealTimeDataItem
+            {
+                RoomID = "1002",
+                SensorValue = "异常"
+            };
+            this.Children.Add(new Frame()
+            {
+                Content = new PageRealTimeDataItem()
                 {
-                    Content = new PageRealTimeDataItem()
-                });
-            }
+                    DataContext = model1
+                }
+            });
+
             return this;
             //Grid.Children.Add(new TextBlock() 
             //{ 

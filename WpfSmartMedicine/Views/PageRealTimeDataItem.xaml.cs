@@ -21,6 +21,7 @@ namespace WpfSmartMedicine.Views
         public PageRealTimeDataItem()
         {
             InitializeComponent();
+            
         }
     }
 }

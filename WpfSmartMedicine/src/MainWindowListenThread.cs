@@ -33,5 +33,7 @@ namespace WpfSmartMedicine.src
             Model.Time = DateTime.Now.ToLongTimeString();
         }
 
+        
+
     }
 }
